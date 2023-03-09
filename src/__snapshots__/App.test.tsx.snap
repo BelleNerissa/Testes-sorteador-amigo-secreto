@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`o componente de cabeçalho deve ser renderizada corretamente 1`] = `<App />`;

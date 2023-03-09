@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`o componente de cabeçalho deve ser renderizada corretamente 1`] = `
+<div>
+  <header
+    class="cabecalho"
+  >
+    <div
+      aria-label="Logo do Sorteador"
+      class="imagem-logo"
+      role="img"
+    />
+    <img
+      alt="Participante com um presente na mão"
+      class="participante"
+      src="/imagens/participante.png"
+    />
+  </header>
+</div>
+`;
