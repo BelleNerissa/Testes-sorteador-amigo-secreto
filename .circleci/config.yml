@@ -2,17 +2,18 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: circleci/node:16
+      - image: circleci/node:14.17-browsers
     steps:
       - checkout
-      - run: yarn install
-
-  test:
-    docker:
-      - image: circleci/node:16
-    steps:
-      - checkout
-      - run: yarn run test
+      - run:
+          name: Install dependencies
+          command: |
+            curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version <version>
+            export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+            yarn install
+      - run:
+          name: Build project
+          command: yarn build
 
 workflows:
   build_and_test:
@@ -21,3 +22,4 @@ workflows:
       - test:
           requires:
             - build
+
